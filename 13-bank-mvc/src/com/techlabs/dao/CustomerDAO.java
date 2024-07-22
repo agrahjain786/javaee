@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -106,7 +107,7 @@ public class CustomerDAO {
 			
 			Connection connection = dataSource.getConnection();
 			 
-			String query = "insert into transactions (sender_account_number, receiver_account_number, type, amount) values (?, ?, ?, ?)";
+			String query = "insert into transactions (sender_account_number, receiver_account_number, type, amount, date) values (?, ?, ?, ?, ?)";
             
 			PreparedStatement stmt = connection.prepareStatement(query);
             
@@ -114,6 +115,11 @@ public class CustomerDAO {
 			stmt.setInt(2, transaction.getReceiverAccountNumber());
 			stmt.setString(3, transaction.getType());
 			stmt.setDouble(4, transaction.getAmount());
+			
+			LocalDateTime localDateTime = LocalDateTime.now();
+	        Timestamp timestamp = Timestamp.valueOf(localDateTime);
+	        
+	        stmt.setTimestamp(5, timestamp);
 			res = stmt.executeUpdate();
 			
 			if(res > 0) {

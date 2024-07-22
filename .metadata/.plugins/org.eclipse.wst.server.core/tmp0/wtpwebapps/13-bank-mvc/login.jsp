@@ -64,6 +64,7 @@
             <div class="alert alert-danger mt-3">
                 ${errorMessage}
             </div>
+            <%-- <c:out value="${request.removeAttribute('errorMessage')}"/> --%>
         </c:if>
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
