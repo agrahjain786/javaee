@@ -1,0 +1,14 @@
+127.0.0.1 - - [13/Jul/2024:17:02:19 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [13/Jul/2024:17:02:20 +0530] "GET /03-jsp-session-todos/todo.jsp HTTP/1.1" 200 938
+0:0:0:0:0:0:0:1 - - [13/Jul/2024:17:02:23 +0530] "GET /favicon.ico HTTP/1.1" 404 762
+0:0:0:0:0:0:0:1 - - [13/Jul/2024:17:02:37 +0530] "GET /03-jsp-session-todos/todo.jsp?item=Go+for+Shopping HTTP/1.1" 200 1022
+0:0:0:0:0:0:0:1 - - [13/Jul/2024:17:02:55 +0530] "GET /03-jsp-session-todos/todo.jsp?item=Take+A+Nap HTTP/1.1" 200 1066
+127.0.0.1 - - [13/Jul/2024:17:04:05 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [13/Jul/2024:17:04:06 +0530] "GET /02-jsp-demo2/ HTTP/1.1" 404 768
+0:0:0:0:0:0:0:1 - - [13/Jul/2024:17:04:06 +0530] "GET /favicon.ico HTTP/1.1" 404 762
+0:0:0:0:0:0:0:1 - - [13/Jul/2024:17:04:56 +0530] "GET /02-jsp-demo2/student-form.jsp HTTP/1.1" 200 2946
+0:0:0:0:0:0:0:1 - - [13/Jul/2024:17:05:13 +0530] "GET /02-jsp-demo2/student-form.jsp HTTP/1.1" 200 2946
+0:0:0:0:0:0:0:1 - - [13/Jul/2024:17:05:13 +0530] "GET /favicon.ico HTTP/1.1" 404 762
+0:0:0:0:0:0:0:1 - - [13/Jul/2024:17:05:26 +0530] "POST /02-jsp-demo2/student-form-response.jsp HTTP/1.1" 200 830
+0:0:0:0:0:0:0:1 - - [13/Jul/2024:17:05:57 +0530] "GET /03-jsp-session-todos/todo.jsp HTTP/1.1" 200 938
+0:0:0:0:0:0:0:1 - - [13/Jul/2024:17:05:57 +0530] "GET /favicon.ico HTTP/1.1" 404 762

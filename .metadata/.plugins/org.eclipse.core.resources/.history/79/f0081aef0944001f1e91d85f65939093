@@ -1,0 +1,61 @@
+package com.techlabs.util;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.techlabs.entity.*;
+
+import javax.sql.DataSource;
+
+public class StudentDBUtil {
+	
+	private DataSource dataSource;
+
+	public StudentDBUtil(DataSource dataSource) {
+		super();
+		this.dataSource = dataSource;
+	}
+	
+	public List<Student> getStudentData(){
+		
+		List<Student> students = new ArrayList<Student>();
+		
+		try {
+			Connection connection = dataSource.getConnection();
+			
+			Statement stmt = connection.createStatement();
+			
+			String sql = "delete from Student_Table where name = 'agrah' and Roll_number != 1";
+			
+			int res = stmt.executeUpdate(sql);
+			
+			System.out.println("Number of rows affected "+ res);
+			
+			String query = "select * from Student_Table";
+			
+			ResultSet rs = stmt.executeQuery(query);
+			
+			while(rs.next()) {
+				int roll_number = rs.getInt("Roll_Number");
+				String name = rs.getString("Name");
+				int attendance = rs.getInt("Attendance");
+				
+				
+				Student student = new Student(roll_number,name,attendance);
+				
+				students.add(student);
+				
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return students;
+	}
+
+}

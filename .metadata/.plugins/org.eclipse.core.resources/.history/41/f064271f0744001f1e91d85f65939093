@@ -1,0 +1,57 @@
+package com.techlabs.entity;
+
+
+public class Student {
+	
+	
+	private int roll_number;
+	private String name;
+	private int rattendance;
+	
+	
+	public Student(int roll_number, String name, int rattendance) {
+		super();
+		this.roll_number = roll_number;
+		this.name = name;
+		this.rattendance = rattendance;
+	}
+
+
+	public int getRoll_number() {
+		return roll_number;
+	}
+
+
+	public void setRoll_number(int roll_number) {
+		this.roll_number = roll_number;
+	}
+
+
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+	public int getRattendance() {
+		return rattendance;
+	}
+
+
+	public void setRattendance(int rattendance) {
+		this.rattendance = rattendance;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Student [roll_number=" + roll_number + ", name=" + name + ", rattendance=" + rattendance + "]";
+	}
+	
+	
+	
+}

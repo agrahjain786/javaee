@@ -1,0 +1,147 @@
+package com.techlabs.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.sql.DataSource;
+
+import com.techlabs.entity.Account;
+import com.techlabs.entity.Customer;
+import com.techlabs.entity.Transaction;
+
+public class BankDAO {
+	
+	private DataSource dataSource;
+
+	public BankDAO(DataSource dataSource) {
+		super();
+		this.dataSource = dataSource;
+	}
+	
+	
+	
+	
+	public Customer getCustomerById(int customerId) {
+		
+        Customer customer = null;
+        
+        try {
+        	Connection connection = dataSource.getConnection();
+        	
+            String query = "select * from customers where id = ?;";
+            
+            PreparedStatement pstmt = connection.prepareStatement(query);
+            
+            pstmt.setInt(1, customerId);
+            
+            ResultSet rs = pstmt.executeQuery();
+            
+            if (rs.next()) {
+            	int id = rs.getInt("id");
+				String firstName = rs.getString("first_name");
+				String lastName = rs.getString("last_name");
+				String email = rs.getString("email");
+				String password = rs.getString("password");
+				
+				
+				customer = new Customer(id, firstName, lastName, email, password);
+            }
+        } 
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return customer;
+    }
+	
+	
+	public boolean createAccount(Account account) {
+		
+		try {
+        	 Connection connection = dataSource.getConnection();
+        	
+        	 String sql = "insert into accounts (customer_id, balance) VALUES (?, ?)";
+
+        	 PreparedStatement stmt = connection.prepareStatement(sql);
+        	 
+        	 stmt.setInt(1, account.getCustomerId());
+             stmt.setDouble(2, account.getBalance());
+             
+             int res = stmt.executeUpdate();
+ 			
+ 			 if(res == 0) return false;
+ 			 return true;
+		}
+		catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return false;
+	}
+
+	
+
+	
+	
+	public boolean updateCustomerProfile(Customer customer) {
+		// TODO Auto-generated method stub
+		try {
+			Connection connection = dataSource.getConnection();
+			
+			String query = "update customers set first_name=?, last_name=?, password=? where id=?";
+			
+			PreparedStatement stmt = connection.prepareStatement(query);
+			
+			stmt.setString(1, customer.getFirstName());
+			stmt.setString(2, customer.getLastName());
+			stmt.setString(3, customer.getPassword());
+			stmt.setInt(4, customer.getId());
+			
+			int res = stmt.executeUpdate();
+			
+			if(res == 0) return false;
+			return true;
+			
+		} 
+		catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	public boolean newTransaction(Transaction transaction) {
+		
+		try {
+			
+			Connection connection = dataSource.getConnection();
+			 
+			String query = "insert into transactions (sender_account_number, receiver_account_number, type, amount) values (?, ?, ?, ?)";
+            
+			PreparedStatement stmt = connection.prepareStatement(query);
+            
+			stmt.setInt(1, transaction.getSenderAccountNumber());
+			stmt.setInt(2, transaction.getReceiverAccountNumber());
+			stmt.setString(3, transaction.getType());
+			stmt.setDouble(4, transaction.getAmount());
+			int res = stmt.executeUpdate();
+			 
+			if(res == 0) return false;
+			return true;
+	    } 
+		catch (SQLException e) {
+	           e.printStackTrace();
+	    }
+		
+		return false;
+	}
+
+	
+
+}

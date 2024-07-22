@@ -1,0 +1,47 @@
+package com.techlabs.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import javax.sql.DataSource;
+
+import com.techlabs.entity.Customer;
+
+public class BankDAO {
+	
+	private DataSource dataSource;
+
+	public BankDAO(DataSource dataSource) {
+		super();
+		this.dataSource = dataSource;
+	}
+	
+	public boolean addCustomer(Customer customer) {
+		// TODO Auto-generated method stub
+		try {
+			Connection connection = dataSource.getConnection();
+			
+			String query = "insert into student(first_name, last_name, email, password) values (?, ?, ?, ?);";
+			
+			PreparedStatement stmt = connection.prepareStatement(query);
+			
+			stmt.setString(1, customer.getFirstName());
+			stmt.setString(2, customer.getLastName());
+			stmt.setString(3, customer.getEmail());
+			stmt.setString(4, customer.getPassword());
+			
+			int res = stmt.executeUpdate();
+			
+			if(res == 0) return false;
+			return true;
+			
+		} 
+		catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+}
