@@ -25,7 +25,7 @@
 	<div class="container">
 		<a href="user" class="button">Back to Customer Home</a>
 		<h2 class="text-center">Passbook</h2>
-		<form action="user" method="get">
+		<form action="user" method="post">
 			<input type="hidden" name="command" value="view_passbook">
 
 			<table class="table table-striped">

@@ -160,19 +160,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="/Users/abhijain/javaee/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/ROOT" path="" reloadable="false"/><Context docBase="/Users/abhijain/javaee/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/08-student-mvc-nodb" path="/08-student-mvc-nodb" reloadable="true" source="org.eclipse.jst.jee.server:08-student-mvc-nodb"/><Context docBase="/Users/abhijain/javaee/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/09-jdbc-test" path="/09-jdbc-test" reloadable="true" source="org.eclipse.jst.jee.server:09-jdbc-test"/><Context docBase="/Users/abhijain/javaee/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/10-jdbc-pool-connection" path="/10-jdbc-pool-connection" reloadable="true" source="org.eclipse.jst.jee.server:10-jdbc-pool-connection">
-
-  <Resource auth="Container" driverClassName="com.mysql.cj.jdbc.Driver" maxActive="20" maxIdle="5" maxWait="10000" name="jdbc/organisation" password="Agrah@786" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/organisation?useSSL=false&amp;serverTimezone=UTC" username="root"/>
-
-</Context><Context docBase="/Users/abhijain/javaee/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/11-jdbc-prepared-statement" path="/11-jdbc-prepared-statement" reloadable="true" source="org.eclipse.jst.jee.server:11-jdbc-prepared-statement">
-
-  <Resource auth="Container" driverClassName="com.mysql.cj.jdbc.Driver" maxActive="20" maxIdle="5" maxWait="10000" name="jdbc/organisation" password="Agrah@786" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/organisation?useSSL=false&amp;serverTimezone=UTC" username="root"/>
-
-</Context><Context docBase="/Users/abhijain/javaee/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/12-jdbc-mvc-db" path="/12-jdbc-mvc-db" reloadable="true" source="org.eclipse.jst.jee.server:12-jdbc-mvc-db">
-
-  <Resource auth="Container" driverClassName="com.mysql.cj.jdbc.Driver" maxActive="20" maxIdle="5" maxWait="10000" name="jdbc/studentdb" password="Agrah@786" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/studentdb?useSSL=false&amp;serverTimezone=UTC" username="root"/>
-
-</Context><Context docBase="/Users/abhijain/javaee/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/13-bank-mvc" path="/13-bank-mvc" reloadable="true" source="org.eclipse.jst.jee.server:13-bank-mvc">
+      <Context docBase="/Users/abhijain/javaee/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/ROOT" path="" reloadable="false"/><Context docBase="/Users/abhijain/javaee/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/13-bank-mvc" path="/13-bank-mvc" reloadable="true" source="org.eclipse.jst.jee.server:13-bank-mvc">
 
   <Resource auth="Container" driverClassName="com.mysql.cj.jdbc.Driver" maxActive="20" maxIdle="5" maxWait="10000" name="jdbc/bankdb" password="Agrah@786" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/bankdb?useSSL=false&amp;serverTimezone=UTC" username="root"/>
 

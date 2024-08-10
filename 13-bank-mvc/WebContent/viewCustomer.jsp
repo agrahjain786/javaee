@@ -23,7 +23,7 @@
 	<div class="container">
 		<a href="admin" class="button">Back to Admin Home</a>
 		<h2 class="text-center">Customers</h2>
-		<form action="admin" method="get" class="search-form">
+		<form action="admin" method="post" class="search-form">
 		<input type="hidden" name="command" value="view_customer">
 			<label for="search">Search By:</label> <select id="search"
 				name="search" required>

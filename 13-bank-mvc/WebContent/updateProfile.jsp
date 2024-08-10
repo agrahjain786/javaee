@@ -28,7 +28,7 @@
 		<h1 class="my-4">Welcome, ${customerName}</h1>
 		<h2 class="text-center">Edit Profile</h2>
 
-		<form action="user" method="get">
+		<form action="user" method="post">
 			<input type = "hidden" name="command" value="edit_profile">
 			<div class="form-group">
 				<label for="first_name">First Name</label> <input type="text"

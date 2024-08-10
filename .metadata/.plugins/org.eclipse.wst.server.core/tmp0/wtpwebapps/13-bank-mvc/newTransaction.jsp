@@ -27,7 +27,7 @@
 
 		<h2 class="text-center">New Transaction</h2>
 
-		<form action="user" method="get">
+		<form action="user" method="post">
 			<input type="hidden" name="command" value="new_transaction">
 			<div class="form-group">
 				<label for="transaction_type">Transaction Type</label> <select

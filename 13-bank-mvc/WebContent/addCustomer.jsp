@@ -29,7 +29,7 @@
 				<div class="card mt-5">
 					<div class="card-body">
 						<h3 class="card-title text-center">Add New Customer</h3>
-						<form action="admin" method="get">
+						<form action="admin" method="post">
 							<input type="hidden" name="command" value="add_customer">
 							<div class="form-group">
 								<label for="firstName">Customer's first name</label> <input

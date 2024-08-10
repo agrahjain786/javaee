@@ -23,7 +23,7 @@
 	<div class="container">
 		<a href="admin" class="button">Back to Admin Home</a>
 		<h2 class="text-center">Transactions</h2>
-		<form action="admin" method="get" class="date-form">
+		<form action="admin" method="post" class="date-form">
 		<input type="hidden" name="command" value ="view_transaction">
 			<label for="start_date">Start Date:</label> <input type="date"
 				id="start_date" name="start_date" required> <label
